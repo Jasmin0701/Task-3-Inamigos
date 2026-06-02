@@ -251,14 +251,14 @@ nav {
 
 .marquee-track {
   display: flex;
-  width: 200%;
+  width: max-content;
   overflow: hidden;
   margin-bottom: 2rem;
 }
 
 .marquee-content {
   display: flex;
-  flex: 0 0 50%;
+  flex: 0 0 auto;
   justify-content: space-around;
 }
 
@@ -271,6 +271,7 @@ nav {
 }
 
 .marquee-item {
+  flex: 0 0 auto;
   width: 400px;
   height: 250px;
   margin: 0 1rem;
