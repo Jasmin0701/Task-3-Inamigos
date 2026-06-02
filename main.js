@@ -55,10 +55,10 @@ function initCursor() {
 
   const links = document.querySelectorAll('a, .btn-primary, .service-row, .marquee-item');
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let ringX = 0;
-  let ringY = 0;
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -66,6 +66,19 @@ function initCursor() {
     
     // Dot follows instantly
     cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  });
+
+  // Hide cursor when leaving the window
+  document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorRing.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursorRing.style.opacity = '1';
+    if (!cursorRing.classList.contains('cursor-hover')) {
+      cursorDot.style.opacity = '1';
+    }
   });
 
   // Ring follows with a slight delay for trailing effect
