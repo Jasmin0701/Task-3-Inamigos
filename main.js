@@ -44,6 +44,15 @@ function initLenis() {
 function initCursor() {
   const cursorDot = document.querySelector('.cursor-dot');
   const cursorRing = document.querySelector('.cursor-ring');
+  
+  // Completely disable custom cursor on touch devices to prevent sticking
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    if (cursorDot) cursorDot.style.display = 'none';
+    if (cursorRing) cursorRing.style.display = 'none';
+    document.body.style.cursor = 'auto';
+    return;
+  }
+
   const links = document.querySelectorAll('a, .btn-primary, .service-row, .marquee-item');
 
   let mouseX = 0;

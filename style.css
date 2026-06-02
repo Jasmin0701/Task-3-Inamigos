@@ -555,7 +555,16 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  /* Disable custom cursor on mobile to prevent it getting stuck */
+  * {
+    cursor: auto !important;
+  }
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+
   nav {
+    position: absolute;
     padding: 1rem 0;
   }
 
