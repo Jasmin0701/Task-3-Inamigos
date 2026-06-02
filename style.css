@@ -74,7 +74,7 @@ body {
 
 /* --- Navbar --- */
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding: 2rem 0;
